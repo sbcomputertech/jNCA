@@ -117,7 +117,7 @@ public class Simulator {
                     }
                 }
 
-                state.values[x][y] = 0;
+                state.values[x][y] = o;
             }
         }
         return state;

@@ -23,7 +23,7 @@ public class CellGridPanel extends JPanel {
 
     public void simulate(SimulationMode mode) {
         StateSnapshot state = StateSnapshot.get(this);
-        Simulator.simulateWithWorker(SimulationMode.NADT, state, this);
+        Simulator.simulateWithWorker(mode, state, this);
         state.apply(this);
 
         for(int x = 0; x < size; x++) {
