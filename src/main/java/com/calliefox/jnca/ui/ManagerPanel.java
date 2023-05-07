@@ -5,11 +5,13 @@ import com.calliefox.jnca.Utils;
 import com.calliefox.jnca.data.ProgramState;
 
 import javax.swing.*;
+import javax.swing.colorchooser.AbstractColorChooserPanel;
 import java.awt.*;
 
 public class ManagerPanel extends JPanel {
+    public static JColorChooser colour;
     public ManagerPanel(JncaApplication app) {
-        setLayout(new GridLayout(0, 1));
+        setLayout(new FlowLayout());
 
         JButton pause = new JButton("Start");
         pause.addActionListener(e -> {
@@ -37,5 +39,14 @@ public class ManagerPanel extends JPanel {
             ProgramState.mode = Enum.valueOf(SimulationMode.class, newMode);
         });
         add(mode);
+
+        colour = new JColorChooser(Color.magenta);
+        for(AbstractColorChooserPanel accp : colour.getChooserPanels()) {
+            if(!accp.getDisplayName().equals("RGB")) {
+                colour.removeChooserPanel(accp);
+            }
+        }
+        colour.setPreviewPanel(new JPanel());
+        add(colour);
     }
 }

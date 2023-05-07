@@ -7,7 +7,7 @@ import com.calliefox.jnca.paralell.CellIterWorker;
 
 public class CellGridManager {
     public final int size = 200;
-    public Cell[][] cells;
+    public final Cell[][] cells;
     public CellGridManager() {
         cells = new Cell[size][size];
         for(int x = 0; x < size; x++) {

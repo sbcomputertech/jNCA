@@ -16,6 +16,7 @@ public class JncaApplication extends JFrame {
         setTitle("jNCA Window");
         setSize(1000, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
 
         cellGridManager = new CellGridManager();
         simTimer = new java.util.Timer();
@@ -43,7 +44,7 @@ public class JncaApplication extends JFrame {
             int sizeY = 4;
             new CellIterWorker(cellGridManager, (x, y, p) -> {
                 float v = p.cells[x][y].value;
-                Color c = Utils.lerpColor(Color.BLACK, Color.GREEN, v);
+                Color c = Utils.lerpColor(Color.BLACK, ManagerPanel.colour.getColor(), v);
                 g2d.setColor(c);
                 g2d.fillRect(x * sizeX, y * sizeY, sizeX, sizeY);
                 lastX = x * sizeX;
