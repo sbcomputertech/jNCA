@@ -1,9 +1,7 @@
 package com.calliefox.jnca.ui;
 
 import com.calliefox.jnca.SimTimerTask;
-import com.calliefox.jnca.SimulationMode;
 import com.calliefox.jnca.Utils;
-import com.calliefox.jnca.data.ProgramState;
 import com.calliefox.jnca.paralell.CellIterWorker;
 
 import javax.swing.*;
