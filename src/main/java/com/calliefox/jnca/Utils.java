@@ -15,6 +15,18 @@ public class Utils {
         return Math.max(val, min);
     }
 
+    public static float lerp(float a, float b, float t) {
+        return a + t * (b - a);
+    }
+    public static float invLerp(float a, float b, float v) {
+        return (v - a) / (b - a);
+    }
+
+    public static float remap(float minI, float maxI, float minO, float maxO, float v) {
+        float t = invLerp(minI, maxI, v);
+        return lerp(minO, maxO, t);
+    }
+
     public static void log(String txt) {
         System.out.println("[log] " + txt);
     }

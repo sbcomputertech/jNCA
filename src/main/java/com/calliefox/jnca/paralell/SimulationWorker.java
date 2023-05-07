@@ -3,23 +3,19 @@ package com.calliefox.jnca.paralell;
 import com.calliefox.jnca.SimulationMode;
 import com.calliefox.jnca.Simulator;
 import com.calliefox.jnca.data.StateSnapshot;
-import com.calliefox.jnca.ui.CellGridPanel;
+import com.calliefox.jnca.ui.CellGridManager;
 
-import javax.swing.*;
-
-public class SimulationWorker extends SwingWorker<StateSnapshot, StateSnapshot> {
+public class SimulationWorker {
     private final SimulationMode mode;
     private final StateSnapshot state;
-    private final CellGridPanel panel;
-    public SimulationWorker(SimulationMode mode, StateSnapshot state, CellGridPanel panel) {
+    private final CellGridManager panel;
+    public SimulationWorker(SimulationMode mode, StateSnapshot state, CellGridManager panel) {
         this.mode = mode;
         this.state = state;
         this.panel = panel;
     }
-    @Override
-    protected StateSnapshot doInBackground() {
+    public void execute() {
         StateSnapshot newState = Simulator.simulate(mode, state);
         newState.apply(panel);
-        return newState;
     }
 }

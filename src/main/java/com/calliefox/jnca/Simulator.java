@@ -3,10 +3,10 @@ package com.calliefox.jnca;
 import com.calliefox.jnca.data.StateSnapshot;
 import com.calliefox.jnca.paralell.SimulationWorker;
 import com.calliefox.jnca.ui.Cell;
-import com.calliefox.jnca.ui.CellGridPanel;
+import com.calliefox.jnca.ui.CellGridManager;
 
 public class Simulator {
-    public static void simulateWithWorker(SimulationMode mode, StateSnapshot state, CellGridPanel panel) {
+    public static void simulateWithWorker(SimulationMode mode, StateSnapshot state, CellGridManager panel) {
         SimulationWorker worker = new SimulationWorker(mode, state, panel);
         worker.execute();
     }
