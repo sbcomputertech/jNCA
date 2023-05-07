@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ManagerPanel extends JPanel {
-    public ManagerPanel() {
+    public ManagerPanel(JncaApplication app) {
         setLayout(new GridLayout(0, 1));
 
         JButton pause = new JButton("Start");
@@ -18,6 +18,13 @@ public class ManagerPanel extends JPanel {
             pause.setText(ProgramState.running ? "Pause" : "Resume");
         });
         add(pause);
+
+        JButton step = new JButton("Step");
+        step.addActionListener(e -> {
+            app.cellGridManager.simulate(ProgramState.mode);
+            app.repaint();
+        });
+        add(step);
 
         JComboBox<String> mode = new JComboBox<>();
         for(SimulationMode val : SimulationMode.values()) {

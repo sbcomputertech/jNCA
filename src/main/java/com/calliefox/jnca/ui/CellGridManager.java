@@ -6,7 +6,7 @@ import com.calliefox.jnca.data.StateSnapshot;
 import com.calliefox.jnca.paralell.CellIterWorker;
 
 public class CellGridManager {
-    public final int size = 100;
+    public final int size = 200;
     public Cell[][] cells;
     public CellGridManager() {
         cells = new Cell[size][size];
