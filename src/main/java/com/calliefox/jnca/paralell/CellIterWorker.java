@@ -4,7 +4,6 @@ import com.calliefox.jnca.TriFunction;
 import com.calliefox.jnca.ui.CellGridPanel;
 
 import javax.swing.*;
-import java.util.function.Function;
 
 public class CellIterWorker extends SwingWorker<Void, Void> {
     private final CellGridPanel panel;

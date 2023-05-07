@@ -1,7 +1,6 @@
 package com.calliefox.jnca.data;
 
 import com.calliefox.jnca.paralell.CellIterWorker;
-import com.calliefox.jnca.ui.Cell;
 import com.calliefox.jnca.ui.CellGridPanel;
 
 public class StateSnapshot {
